@@ -26,6 +26,9 @@ The "encoding.binary" package likely provides everything you need.
 - g_size_checked_add: not implemented because the g_size type isn't used
 - g_size_checked_mul: not implemented because the g_size type isn't used
 
+### Numerical Definitions
+Excluding the decomposition of floating point numbers and Pi divided by 2 and 4, all of those are in the "math" package
+
 ## gmacros.h
 Provided by the os package
 - G_IS_DIR_SEPARATOR: os.IsPathSeparator
