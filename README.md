@@ -7,8 +7,8 @@ Several of the functions that accepted a pointer argument so they could return a
 converted to use Golang's error types and return multiple items.
 
 ## gversion.{h,c} & gversionmacros.h
-Since go is statically compiled new import paths will be created when breaking API changes happen.
-As such the contents of these files are redundant.
+Since go is statically compiled, new import paths will be created when breaking API changes happen.
+As such, the contents of these files are redundant.
 
 ## gtypes.h
 ### Type Macros and definitions
@@ -19,8 +19,12 @@ The byte order macros are not implemented currently.
 The "encoding.binary" package likely provides everything you need.
 
 ### Bounds-Checking Integer Arithmetic
-- g_uint_checked_add(): implemented with a signature change func UintCheckAdd(a, b) z, error
-- g_uint_checked_add(): implemented with a signature change
+- g_uint_checked_add: not implemented, use Uint64CheckedAdd and test if the result is bounded within math.Max{type} for what you want to downcast the result to.
+- g_uint_checked_mul: not implemented, see g_uint_checked_add
+- g_uint64_checked_add: implemented
+- g_uint64_checked_mul: implemented
+- g_size_checked_add: not implemented because the g_size type isn't used
+- g_size_checked_mul: not implemented because the g_size type isn't used
 
 ## gmacros.h
 Provided by the os package
