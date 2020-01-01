@@ -1,15 +1,26 @@
-# glib-go
-A pure go implementation of glib.
+# glib-go: A pure go implementation of glib.
 
-This is designed around glib-2.62.4.
+This is designed around glib-2.62.4. I am not planning this library as a library that would allow
+an automated conversion of glib client C code to Golang.
+All of the implemented names have been changed to match Golang's requirements and recommendations.
+Several of the functions that accepted a pointer argument so they could return an error have been
+converted to use Golang's error types and return multiple items.
 
 ## gversion.{h,c} & gversionmacros.h
 Since go is statically compiled new import paths will be created when breaking API changes happen.
 As such the contents of these files are redundant.
 
 ## gtypes.h
+### Type Macros and definitions
 Go already provides stable variants for most of these types or the types are not required with how go is structured.
-So this fule considered redundant for now.
+
+### Byte Order Macros
+The byte order macros are not implemented currently.
+The "encoding.binary" package likely provides everything you need.
+
+### Bounds-Checking Integer Arithmetic
+- g_uint_checked_add(): implemented with a signature change func UintCheckAdd(a, b) z, error
+- g_uint_checked_add(): implemented with a signature change
 
 ## gmacros.h
 Provided by the os package
@@ -51,9 +62,3 @@ Probably unneeded due to language differences
 - GSIZE_TO_POINTER
 - GPOINTER_TO_SIZE
 
-## gtypes.h
-The byte order macros are not implemented currently.
-The "encoding.binary" package likely provides everything you need.
-
-implemented
-- 
