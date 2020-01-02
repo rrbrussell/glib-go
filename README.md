@@ -30,6 +30,7 @@ The "encoding.binary" package likely provides everything you need.
 Excluding the decomposition of floating point numbers and Pi divided by 2 and 4, all of those are in the "math" package
 
 ## gmacros.h
+### Standard Macros
 Provided by the os package
 - G_IS_DIR_SEPARATOR: os.IsPathSeparator
 - G_OS_WIN32: test os.GOOS for runtime testing for buildtime use Go's Build Constraints
@@ -60,6 +61,9 @@ Probably unneeded due to language differences
 Depreciated
 - G_CONST_RETURN
 
+### Miscellaneous Macros
+I am not implementing these at this time since that are almost entirely C specific.
+
 ## glibconfig.h.in
 Probably unneeded due to language differences
 - GINT_TO_POINTER
@@ -69,3 +73,9 @@ Probably unneeded due to language differences
 - GSIZE_TO_POINTER
 - GPOINTER_TO_SIZE
 
+## gmain.{h,c}
+### The Main Event Loop
+Right now I am going to implement most of the main event loop using
+similar names to glib to ease porting. Since Golang doesn't have the
+traditional poll() system call I am not sure how internally implement
+the looping. Channels maybe?
