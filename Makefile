@@ -8,8 +8,6 @@ build: .glibLastBuild
 
 test: glibCoverage.html
 
-glibCoverage.html: glibCoverage.out
+glibCoverage.html: ./glib/*.go
 	go test -cover -coverprofile=glibCoverage.out github.com/rrbrussell/glib-go/glib
 	go tool cover -html=glibCoverage.out -o glibCoverage.html
-
-glibCoverage.out: ./glib/*.go
