@@ -16,3 +16,7 @@
 
 # Editor stuff
 .vscode/*
+
+# Makefile support file
+.glibLastBuild
+glibCoverage.html
