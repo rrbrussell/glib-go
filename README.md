@@ -66,21 +66,16 @@ can be converted into Golang and work on Linux and maybe Windows.
 
 - [ ] gasyncqueue.h
 
-## gatomic.c
+## gatomic.c - Partial
 
-- [ ] config.h
-- [ ] gatomic.h
-- [ ] gmessages.h
-- [ ] pthread.h
-- [ ] windows.h
+- [X] gatomic.h
 
-## gatomic.h
+## gatomic.h - Partial
 
-- [ ] glib/gtypes.h
+- [X] glib/gtypes.h
 
 ## gbacktrace.c
 
-- [ ] *
 - [ ] config.h
 - [ ] gbacktrace.h
 - [ ] glibconfig.h
