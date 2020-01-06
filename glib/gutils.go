@@ -109,10 +109,10 @@ func GGetUserSpecialDir(directory GUserDirectory) (userSpecialDir string) {
  * including without limitation the rights to use, copy, modify, merge,
  * publish, distribute, sublicense, and/or sell copies of the Software,
  * and to permit persons to whom the Software is furnished to do so,
- * subject to the following conditions: 
+ * subject to the following conditions:
  *
  * The above copyright notice and this permission notice shall be
- * included in all copies or substantial portions of the Software. 
+ * included in all copies or substantial portions of the Software.
  *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
@@ -123,147 +123,202 @@ func GGetUserSpecialDir(directory GUserDirectory) (userSpecialDir string) {
  * CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-func loadUserSpecialdirs(void) {
-	gchar *config_dir = NULL;
-	gchar *config_file;
-	gchar *data;
-	gchar **lines;
-	gint n_lines, i;
+func loadUserSpecialdirs() { /*
+		gchar *config_dir = NULL;
+		gchar *config_file;
+		gchar *data;
+		gchar **lines;
+		gint n_lines, i;
 
-	config_dir = g_build_user_config_dir ();
-	config_file = g_build_filename (config_dir, "user-dirs.dirs", NULL);
-	g_free (config_dir);
+		config_dir = g_build_user_config_dir ();
+		config_file = g_build_filename (config_dir, "user-dirs.dirs", NULL);
+		g_free (config_dir);
 
-	if (!g_file_get_contents (config_file, &data, NULL, NULL))
-	{
-		g_free (config_file);
-		return;
-	}
-
-	lines = g_strsplit (data, "\n", -1);
-	n_lines = g_strv_length (lines);
-	g_free (data);
-
-	for (i = 0; i < n_lines; i++) {
-		gchar *buffer = lines[i];
-		gchar *d, *p;
-		gint len;
-		gboolean is_relative = FALSE;
-		GUserDirectory directory;
- 
-		/* Remove newline at end */
-		len = strlen (buffer);
-		if (len > 0 && buffer[len - 1] == '\n'){
-			buffer[len - 1] = 0;
-		}
-		
-		p = buffer;
-		while (*p == ' ' || *p == '\t')
-			p++;
-
-		if (strncmp (p, "XDG_DESKTOP_DIR", strlen ("XDG_DESKTOP_DIR")) == 0)
+		if (!g_file_get_contents (config_file, &data, NULL, NULL))
 		{
-			directory = G_USER_DIRECTORY_DESKTOP;
-			p += strlen ("XDG_DESKTOP_DIR");
+			g_free (config_file);
+			return;
 		}
-	   else if (strncmp (p, "XDG_DOCUMENTS_DIR", strlen ("XDG_DOCUMENTS_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_DOCUMENTS;
-		   p += strlen ("XDG_DOCUMENTS_DIR");
-		 }
-	   else if (strncmp (p, "XDG_DOWNLOAD_DIR", strlen ("XDG_DOWNLOAD_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_DOWNLOAD;
-		   p += strlen ("XDG_DOWNLOAD_DIR");
-		 }
-	   else if (strncmp (p, "XDG_MUSIC_DIR", strlen ("XDG_MUSIC_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_MUSIC;
-		   p += strlen ("XDG_MUSIC_DIR");
-		 }
-	   else if (strncmp (p, "XDG_PICTURES_DIR", strlen ("XDG_PICTURES_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_PICTURES;
-		   p += strlen ("XDG_PICTURES_DIR");
-		 }
-	   else if (strncmp (p, "XDG_PUBLICSHARE_DIR", strlen ("XDG_PUBLICSHARE_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_PUBLIC_SHARE;
-		   p += strlen ("XDG_PUBLICSHARE_DIR");
-		 }
-	   else if (strncmp (p, "XDG_TEMPLATES_DIR", strlen ("XDG_TEMPLATES_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_TEMPLATES;
-		   p += strlen ("XDG_TEMPLATES_DIR");
-		 }
-	   else if (strncmp (p, "XDG_VIDEOS_DIR", strlen ("XDG_VIDEOS_DIR")) == 0)
-		 {
-		   directory = G_USER_DIRECTORY_VIDEOS;
-		   p += strlen ("XDG_VIDEOS_DIR");
-		 }
-	   else
-	 continue;
- 
-	   while (*p == ' ' || *p == '\t')
-	 p++;
- 
-	   if (*p != '=')
-	 continue;
-	   p++;
- 
-	   while (*p == ' ' || *p == '\t')
-	 p++;
- 
-	   if (*p != '"')
-	 continue;
-	   p++;
- 
-	   if (strncmp (p, "$HOME", 5) == 0)
-	 {
-	   p += 5;
-	   is_relative = TRUE;
-	 }
-	   else if (*p != '/')
-	 continue;
- 
-	   d = strrchr (p, '"');
-	   if (!d)
+
+		lines = g_strsplit (data, "\n", -1);
+		n_lines = g_strv_length (lines);
+		g_free (data);
+
+		for (i = 0; i < n_lines; i++) {
+			gchar *buffer = lines[i];
+			gchar *d, *p;
+			gint len;
+			gboolean is_relative = FALSE;
+			GUserDirectory directory;
+
+			/* Remove newline at end */ /*
+			len = strlen (buffer);
+			if (len > 0 && buffer[len - 1] == '\n'){
+				buffer[len - 1] = 0;
+			}
+
+			p = buffer;
+			while (*p == ' ' || *p == '\t')
+				p++;
+
+			if (strncmp (p, "XDG_DESKTOP_DIR", strlen ("XDG_DESKTOP_DIR")) == 0)
+			{
+				directory = G_USER_DIRECTORY_DESKTOP;
+				p += strlen ("XDG_DESKTOP_DIR");
+			}
+		   else if (strncmp (p, "XDG_DOCUMENTS_DIR", strlen ("XDG_DOCUMENTS_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_DOCUMENTS;
+			   p += strlen ("XDG_DOCUMENTS_DIR");
+			 }
+		   else if (strncmp (p, "XDG_DOWNLOAD_DIR", strlen ("XDG_DOWNLOAD_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_DOWNLOAD;
+			   p += strlen ("XDG_DOWNLOAD_DIR");
+			 }
+		   else if (strncmp (p, "XDG_MUSIC_DIR", strlen ("XDG_MUSIC_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_MUSIC;
+			   p += strlen ("XDG_MUSIC_DIR");
+			 }
+		   else if (strncmp (p, "XDG_PICTURES_DIR", strlen ("XDG_PICTURES_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_PICTURES;
+			   p += strlen ("XDG_PICTURES_DIR");
+			 }
+		   else if (strncmp (p, "XDG_PUBLICSHARE_DIR", strlen ("XDG_PUBLICSHARE_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_PUBLIC_SHARE;
+			   p += strlen ("XDG_PUBLICSHARE_DIR");
+			 }
+		   else if (strncmp (p, "XDG_TEMPLATES_DIR", strlen ("XDG_TEMPLATES_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_TEMPLATES;
+			   p += strlen ("XDG_TEMPLATES_DIR");
+			 }
+		   else if (strncmp (p, "XDG_VIDEOS_DIR", strlen ("XDG_VIDEOS_DIR")) == 0)
+			 {
+			   directory = G_USER_DIRECTORY_VIDEOS;
+			   p += strlen ("XDG_VIDEOS_DIR");
+			 }
+		   else
 		 continue;
-	   *d = 0;
- 
-	   d = p;
-	   
-	   /* remove trailing slashes */
-	   len = strlen (d);
-	   if (d[len - 1] == '/')
-		 d[len - 1] = 0;
-	   
-	   if (is_relative)
+
+		   while (*p == ' ' || *p == '\t')
+		 p++;
+
+		   if (*p != '=')
+		 continue;
+		   p++;
+
+		   while (*p == ' ' || *p == '\t')
+		 p++;
+
+		   if (*p != '"')
+		 continue;
+		   p++;
+
+		   if (strncmp (p, "$HOME", 5) == 0)
 		 {
-		   gchar *home_dir = g_build_home_dir ();
-		   g_user_special_dirs[directory] = g_build_filename (home_dir, d, NULL);
-		   g_free (home_dir);
+		   p += 5;
+		   is_relative = TRUE;
 		 }
-	   else
-	 g_user_special_dirs[directory] = g_strdup (d);
-	 }
-	g_strfreev (lines);
-	g_free (config_file);
+		   else if (*p != '/')
+		 continue;
+
+		   d = strrchr (p, '"');
+		   if (!d)
+			 continue;
+		   *d = 0;
+
+		   d = p;
+
+		   /* remove trailing slashes */ /*
+		   len = strlen (d);
+		   if (d[len - 1] == '/')
+			 d[len - 1] = 0;
+
+		   if (is_relative)
+			 {
+			   gchar *home_dir = g_build_home_dir ();
+			   g_user_special_dirs[directory] = g_build_filename (home_dir, d, NULL);
+			   g_free (home_dir);
+			 }
+		   else
+		 g_user_special_dirs[directory] = g_strdup (d);
+		 }
+		g_strfreev (lines);
+		g_free (config_file);*/
 }
 
 func gBuildUserConfigDir() (configDir string) {
 	configDir, found := os.LookupEnv("XDG_CONFIG_HOME")
 	if !found || configDir == "" {
 		homeDir := gBuildHomeDir()
-		configDir = home_dir + ".config"
+		configDir = homeDir + ".config"
 	}
 	return configDir
 }
 
-func gBuildHomeDir() (configDir) string) {
+func gBuildHomeDir() (configDir string) {
 	configDir, found := os.LookupEnv("HOME")
-	if !found || configDir = "" {
+	if !found || configDir == "" {
 		configDir = "/"
 	}
 	return configDir
 }
+
+// GDebugKey - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gutils.h:149
+type GDebugKey struct {
+	key   []gchar
+	value guint
+}
+
+// g_bit_nth_lsf_impl - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gutils.h:254
+func g_bit_nth_lsf_impl(mask gulong, nth_bit gint) gint {
+	if nth_bit < gint((-1)) {
+
+		nth_bit = gint((-1))
+	}
+	for nth_bit < gint((8*8 - 1)) {
+		nth_bit++
+		if uint32((mask & gulong((uint32(1 << uint64(int32((nth_bit)))))))) != 0 {
+			return nth_bit
+		}
+	}
+	return gint((-1))
+}
+
+// g_bit_nth_msf_impl - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gutils.h:268
+func g_bit_nth_msf_impl(mask gulong, nth_bit gint) gint {
+	if nth_bit < gint((0)) || nth_bit > gint((8*8)) {
+		nth_bit = gint((8 * 8))
+	}
+	for nth_bit > gint((0)) {
+		nth_bit--
+		if uint32((mask & gulong((uint32(1 << uint64(int32((nth_bit)))))))) != 0 {
+			return nth_bit
+		}
+	}
+	return gint((-1))
+}
+
+// GBitStorage returns the number of bits used to hold its argument
+func GBitStorage(number uint64) (nBits int) {
+	for number > 0 {
+		nBits++
+		number >>= 1
+	}
+	return nBits
+}
+
+// GFormatSizeFlags - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gutils.h:177
+type GFormatSizeFlags = int32
+
+// G_FORMAT_SIZE_DEFAULT - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gutils.h:177
+const (
+	GFormatSizeDefault    GFormatSizeFlags = 0
+	GFormatSizeLongFormat                  = 1 << 0
+	GFormatSizeIECUnits                    = 1 << 1
+	GFormatSizeBits                        = 1 << 2
+)
