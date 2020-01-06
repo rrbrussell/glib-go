@@ -66,13 +66,9 @@ Converted as galloca.go. Nothing was converted over.
 
 - [ ] gasyncqueue.h
 
-### gatomic.c - Partial
+### gatomic.{c,h} - Partial
 
-- [X] gatomic.h
-
-### gatomic.h - Partial
-
-- [X] glib/gtypes.h
+Partial conversion complete. I didn't convert the pointer locks at this time
 
 ### gbacktrace.c
 
@@ -215,7 +211,7 @@ Converted as galloca.go. Nothing was converted over.
 
 ### gcharsetprivate.h
 
-- [ ] gcharset.h
+This file is currently empty.
 
 ### gchecksum.c
 
