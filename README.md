@@ -9,13 +9,13 @@ is a combination of design decisions made in GTK3 and stability of the API. The 
 is to get this code polished well enough that the GTK2 versions of Mate, XFCE, or maybe GNOME 2 itself
 can be converted into Golang and work on Linux and maybe Windows.
 
-# Files in glib to port
+## Files in glib to port
 
-## galloca.h
+### galloca.h
 
-- [ ] glib/gtypes.h
+Converted as galloca.go. Nothing was converted over.
 
-## garcbox.c
+### garcbox.c
 
 - [ ] config.h
 - [ ] glib_trace.h
@@ -25,7 +25,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] valgrind.h
 
-## garray.c
+### garray.c
 
 - [ ] config.h
 - [ ] garray.h
@@ -41,11 +41,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## garray.h
+### garray.h
 
 - [ ] glib/gtypes.h
 
-## gasyncqueue.c
+### gasyncqueue.c
 
 - [ ] config.h
 - [ ] deprecated/gthread.h
@@ -58,23 +58,23 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gthread.h
 - [ ] gtimer.h
 
-## gasyncqueue.h
+### gasyncqueue.h
 
 - [ ] glib/gthread.h
 
-## gasyncqueueprivate.h
+### gasyncqueueprivate.h
 
 - [ ] gasyncqueue.h
 
-## gatomic.c - Partial
+### gatomic.c - Partial
 
 - [X] gatomic.h
 
-## gatomic.h - Partial
+### gatomic.h - Partial
 
 - [X] glib/gtypes.h
 
-## gbacktrace.c
+### gbacktrace.c
 
 - [ ] config.h
 - [ ] gbacktrace.h
@@ -95,13 +95,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] time.h
 - [ ] unistd.h
 
-## gbacktrace.h
+### gbacktrace.h
 
 - [ ] glib/gtypes.h
 - [ ] signal.h
 - [ ] sys/select.h
 
-## gbase64.c
+### gbase64.c
 
 - [ ] config.h
 - [ ] gbase64.h
@@ -109,11 +109,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtestutils.h
 - [ ] string.h
 
-## gbase64.h
+### gbase64.h
 
 - [ ] glib/gtypes.h
 
-## gbitlock.c
+### gbitlock.c
 
 - [ ] config.h
 - [ ] gbitlock.h
@@ -127,11 +127,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/syscall.h
 - [ ] unistd.h
 
-## gbitlock.h
+### gbitlock.h
 
 - [ ] glib/gtypes.h
 
-## gbookmarkfile.c
+### gbookmarkfile.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -162,17 +162,17 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] time.h
 
-## gbookmarkfile.h
+### gbookmarkfile.h
 
 - [ ] glib/gerror.h
 - [ ] time.h
 
-## gbsearcharray.h
+### gbsearcharray.h
 
 - [ ] glib.h
 - [ ] string.h
 
-## gbytes.c
+### gbytes.c
 
 - [ ] config.h
 - [ ] gbytes.h
@@ -186,12 +186,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib/gtestutils.h
 - [ ] string.h
 
-## gbytes.h
+### gbytes.h
 
 - [ ] glib/garray.h
 - [ ] glib/gtypes.h
 
-## gcharset.c
+### gcharset.c
 
 - [ ] config.h
 - [ ] garray.h
@@ -209,15 +209,15 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] windows.h
 
-## gcharset.h
+### gcharset.h
 
 - [ ] glib/gtypes.h
 
-## gcharsetprivate.h
+### gcharsetprivate.h
 
 - [ ] gcharset.h
 
-## gchecksum.c
+### gchecksum.c
 
 - [ ] config.h
 - [ ] gchecksum.h
@@ -229,16 +229,16 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtypes.h
 - [ ] string.h
 
-## gchecksum.h
+### gchecksum.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gtypes.h
 
-## gconstructor.h
+### gconstructor.h
 
 - [ ] stdlib.h
 
-## gconvert.c
+### gconvert.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -260,11 +260,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] win_iconv.c
 - [ ] windows.h
 
-## gconvert.h
+### gconvert.h
 
 - [ ] glib/gerror.h
 
-## gdataset.c
+### gdataset.c
 
 - [ ] config.h
 - [ ] gbitlock.h
@@ -279,15 +279,15 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gthread.h
 - [ ] string.h
 
-## gdataset.h
+### gdataset.h
 
 - [ ] glib/gquark.h
 
-## gdatasetprivate.h
+### gdatasetprivate.h
 
 - [ ] gatomic.h
 
-## gdate.c
+### gdate.c
 
 - [ ] config.h
 - [ ] garray.h
@@ -305,13 +305,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] time.h
 - [ ] windows.h
 
-## gdate.h
+### gdate.h
 
 - [ ] glib/gquark.h
 - [ ] glib/gtypes.h
 - [ ] time.h
 
-## gdatetime.c
+### gdatetime.c
 
 - [ ] config.h
 - [ ] gatomic.h
@@ -334,11 +334,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/time.h
 - [ ] time.h
 
-## gdatetime.h
+### gdatetime.h
 
 - [ ] glib/gtimezone.h
 
-## gdir.c
+### gdir.c
 
 - [ ] config.h
 - [ ] dirent.h
@@ -356,17 +356,17 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/stat.h
 - [ ] sys/types.h
 
-## gdir.h
+### gdir.h
 
 - [ ] dirent.h
 - [ ] glib/gerror.h
 
-## gen-unicode-tables.pl
+### gen-unicode-tables.pl
 
 - [ ] print
 - [ ] print
 
-## genviron.c
+### genviron.c
 
 - [ ] config.h
 - [ ] crt_externs.h
@@ -382,11 +382,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] windows.h
 
-## genviron.h
+### genviron.h
 
 - [ ] glib/gtypes.h
 
-## gerror.c
+### gerror.c
 
 - [ ] config.h
 - [ ] gerror.h
@@ -394,12 +394,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gstrfuncs.h
 - [ ] gtestutils.h
 
-## gerror.h
+### gerror.h
 
 - [ ] glib/gquark.h
 - [ ] stdarg.h
 
-## gfileutils.c
+### gfileutils.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -423,12 +423,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gfileutils.h
+### gfileutils.h
 
 - [ ] glib/gerror.h
 - [ ] glibconfig.h
 
-## ggettext.c
+### ggettext.c
 
 - [ ] *
 - [ ] *
@@ -448,11 +448,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] locale.h
 - [ ] string.h
 
-## ggettext.h
+### ggettext.h
 
 - [ ] glib/gtypes.h
 
-## ghash.c
+### ghash.c
 
 - [ ] config.h
 - [ ] gatomic.h
@@ -466,12 +466,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gvalgrind.h
 - [ ] string.h
 
-## ghash.h
+### ghash.h
 
 - [ ] glib/glist.h
 - [ ] glib/gtypes.h
 
-## ghmac.c
+### ghmac.c
 
 - [ ] config.h
 - [ ] gatomic.h
@@ -485,23 +485,23 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtypes.h
 - [ ] string.h
 
-## ghmac.h
+### ghmac.h
 
 - [ ] gchecksum.h
 - [ ] glib/gtypes.h
 
-## ghook.c
+### ghook.c
 
 - [ ] config.h
 - [ ] ghook.h
 - [ ] gslice.h
 - [ ] gtestutils.h
 
-## ghook.h
+### ghook.h
 
 - [ ] glib/gmem.h
 
-## ghostutils.c
+### ghostutils.c
 
 - [ ] config.h
 - [ ] garray.h
@@ -512,23 +512,23 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gstring.h
 - [ ] string.h
 
-## ghostutils.h
+### ghostutils.h
 
 - [ ] glib/gtypes.h
 
-## gi18n-lib.h
+### gi18n-lib.h
 
 - [ ] glib.h
 - [ ] libintl.h
 - [ ] string.h
 
-## gi18n.h
+### gi18n.h
 
 - [ ] glib.h
 - [ ] libintl.h
 - [ ] string.h
 
-## giochannel.c
+### giochannel.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -538,13 +538,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtestutils.h
 - [ ] string.h
 
-## giochannel.h
+### giochannel.h
 
 - [ ] glib/gconvert.h
 - [ ] glib/gmain.h
 - [ ] glib/gstring.h
 
-## giounix.c
+### giounix.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -561,7 +561,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/types.h
 - [ ] unistd.h
 
-## giowin32.c
+### giowin32.c
 
 - [ ] config.h
 - [ ] conio.h
@@ -577,7 +577,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] windows.h
 - [ ] winsock2.h
 
-## gkeyfile.c
+### gkeyfile.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -607,12 +607,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/types.h
 - [ ] unistd.h
 
-## gkeyfile.h
+### gkeyfile.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gerror.h
 
-## glib-init.c
+### glib-init.c
 
 - [ ] config.h
 - [ ] ctype.h
@@ -626,12 +626,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## glib-init.h
+### glib-init.h
 
 - [ ] gmessages.h
 - [ ] windows.h
 
-## glib-object.h
+### glib-object.h
 
 - [ ] gobject/gbinding.h
 - [ ] gobject/gboxed.h
@@ -650,26 +650,26 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gobject/gvaluearray.h
 - [ ] gobject/gvaluetypes.h
 
-## glib-private.c
+### glib-private.c
 
 - [ ] config.h
 - [ ] glib-init.h
 - [ ] glib-private.h
 
-## glib-private.h
+### glib-private.h
 
 - [ ] glib.h
 - [ ] gstdioprivate.h
 - [ ] gwakeup.h
 
-## glib-unix.c
+### glib-unix.c
 
 - [ ] config.h
 - [ ] glib-unix.h
 - [ ] gmain-internal.h
 - [ ] string.h
 
-## glib-unix.h
+### glib-unix.h
 
 - [ ] errno.h
 - [ ] fcntl.h
@@ -678,7 +678,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/wait.h
 - [ ] unistd.h
 
-## glib.h
+### glib.h
 
 - [ ] glib/deprecated/gallocator.h
 - [ ] glib/deprecated/gcache.h
@@ -760,25 +760,25 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib/gversionmacros.h
 - [ ] glib/gwin32.h
 
-## glib.rc.in
+### glib.rc.in
 
 - [ ] winver.h
 
-## glib_trace.h
+### glib_trace.h
 
 - [ ] glib_probes.h
 
-## glibconfig.h.in
+### glibconfig.h.in
 
 - [ ] float.h
 - [ ] glib/gmacros.h
 - [ ] limits.h
 
-## glibintl.h
+### glibintl.h
 
 - [ ] libintl.h
 
-## glist.c
+### glist.c
 
 - [ ] config.h
 - [ ] glist.h
@@ -786,20 +786,20 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gslice.h
 - [ ] gtestutils.h
 
-## glist.h
+### glist.h
 
 - [ ] glib/gmem.h
 - [ ] glib/gnode.h
 
-## gmacros.h
+### gmacros.h
 
 - [ ] stddef.h
 
-## gmain-internal.h
+### gmain-internal.h
 
 - [ ] gmain.h
 
-## gmain.c
+### gmain.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -834,13 +834,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gmain.h
+### gmain.h
 
 - [ ] glib/gpoll.h
 - [ ] glib/gslist.h
 - [ ] glib/gthread.h
 
-## gmappedfile.c
+### gmappedfile.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -863,12 +863,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gmappedfile.h
+### gmappedfile.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gerror.h
 
-## gmarkup.c
+### gmarkup.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -886,13 +886,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gmarkup.h
+### gmarkup.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gslist.h
 - [ ] stdarg.h
 
-## gmem.c
+### gmem.c
 
 - [ ] config.h
 - [ ] gbacktrace.h
@@ -905,11 +905,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gmem.h
+### gmem.h
 
 - [ ] glib/gutils.h
 
-## gmessages.c
+### gmessages.c
 
 - [ ] config.h
 - [ ] crtdbg.h
@@ -944,25 +944,25 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/un.h
 - [ ] unistd.h
 
-## gmessages.h
+### gmessages.h
 
 - [ ] glib/gmacros.h
 - [ ] glib/gtypes.h
 - [ ] glib/gvariant.h
 - [ ] stdarg.h
 
-## gnode.c
+### gnode.c
 
 - [ ] config.h
 - [ ] gnode.h
 - [ ] gslice.h
 - [ ] gtestutils.h
 
-## gnode.h
+### gnode.h
 
 - [ ] glib/gmem.h
 
-## goption.c
+### goption.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -976,19 +976,19 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## goption.h
+### goption.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gquark.h
 
-## gosxutils.m
+### gosxutils.m
 
 - [ ] Cocoa/Cocoa.h
 - [ ] config.h
 - [ ] gstrfuncs.h
 - [ ] gutils.h
 
-## gpattern.c
+### gpattern.c
 
 - [ ] config.h
 - [ ] gmacros.h
@@ -999,11 +999,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gutils.h
 - [ ] string.h
 
-## gpattern.h
+### gpattern.h
 
 - [ ] glib/gtypes.h
 
-## gpoll.c
+### gpoll.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1021,12 +1021,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gpoll.h
+### gpoll.h
 
 - [ ] glib/gtypes.h
 - [ ] glibconfig.h
 
-## gprimes.c
+### gprimes.c
 
 - [ ] config.h
 - [ ] gprimes.h
@@ -1035,7 +1035,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 
 - [ ] glib/gtypes.h
 
-## gprintf.c
+### gprintf.c
 
 - [ ] config.h
 - [ ] gprintf.h
@@ -1044,17 +1044,17 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdio.h
 - [ ] stdlib.h
 
-## gprintf.h
+### gprintf.h
 
 - [ ] glib.h
 - [ ] stdarg.h
 - [ ] stdio.h
 
-## gprintfint.h
+### gprintfint.h
 
 - [ ] gnulib/printf.h
 
-## gqsort.c
+### gqsort.c
 
 - [ ] config.h
 - [ ] galloca.h
@@ -1065,11 +1065,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gqsort.h
+### gqsort.h
 
 - [ ] glib/gtypes.h
 
-## gquark.c
+### gquark.c
 
 - [ ] config.h
 - [ ] ghash.h
@@ -1082,22 +1082,22 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gthread.h
 - [ ] string.h
 
-## gquark.h
+### gquark.h
 
 - [ ] glib/gtypes.h
 
-## gqueue.c
+### gqueue.c
 
 - [ ] config.h
 - [ ] gqueue.h
 - [ ] gslice.h
 - [ ] gtestutils.h
 
-## gqueue.h
+### gqueue.h
 
 - [ ] glib/glist.h
 
-## grand.c
+### grand.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1116,11 +1116,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/types.h
 - [ ] unistd.h
 
-## grand.h
+### grand.h
 
 - [ ] glib/gtypes.h
 
-## grcbox.c
+### grcbox.c
 
 - [ ] config.h
 - [ ] glib_trace.h
@@ -1131,28 +1131,28 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] valgrind.h
 
-## grcbox.h
+### grcbox.h
 
 - [ ] glib/gmem.h
 
-## grcboxprivate.h
+### grcboxprivate.h
 
 - [ ] grcbox.h
 - [ ] gtypes.h
 
-## grefcount.c
+### grefcount.c
 
 - [ ] config.h
 - [ ] gatomic.h
 - [ ] gmessages.h
 - [ ] grefcount.h
 
-## grefcount.h
+### grefcount.h
 
 - [ ] glib/gatomic.h
 - [ ] glib/gtypes.h
 
-## grefstring.c
+### grefstring.c
 
 - [ ] config.h
 - [ ] ghash.h
@@ -1162,12 +1162,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gthread.h
 - [ ] string.h
 
-## grefstring.h
+### grefstring.h
 
 - [ ] gmacros.h
 - [ ] gmem.h
 
-## gregex.c
+### gregex.c
 
 - [ ] config.h
 - [ ] gatomic.h
@@ -1182,12 +1182,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] pcre/pcre.h
 - [ ] string.h
 
-## gregex.h
+### gregex.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gstring.h
 
-## gscanner.c
+### gscanner.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1203,12 +1203,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] unistd.h
 
-## gscanner.h
+### gscanner.h
 
 - [ ] glib/gdataset.h
 - [ ] glib/ghash.h
 
-## gsequence.c
+### gsequence.c
 
 - [ ] config.h
 - [ ] gmem.h
@@ -1216,11 +1216,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gslice.h
 - [ ] gtestutils.h
 
-## gsequence.h
+### gsequence.h
 
 - [ ] glib/gtypes.h
 
-## gshell.c
+### gshell.c
 
 - [ ] config.h
 - [ ] glibintl.h
@@ -1232,11 +1232,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gthread.h
 - [ ] string.h
 
-## gshell.h
+### gshell.h
 
 - [ ] glib/gerror.h
 
-## gslice.c
+### gslice.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1261,29 +1261,29 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gslice.h
+### gslice.h
 
 - [ ] glib/gtypes.h
 
-## gslist.c
+### gslist.c
 
 - [ ] config.h
 - [ ] gslice.h
 - [ ] gslist.h
 - [ ] gtestutils.h
 
-## gslist.h
+### gslist.h
 
 - [ ] glib/gmem.h
 - [ ] glib/gnode.h
 
-## gspawn-private.h
+### gspawn-private.h
 
 - [ ] config.h
 - [ ] errno.h
 - [ ] gspawn.h
 
-## gspawn-win32-helper.c
+### gspawn-win32-helper.c
 
 - [ ] config.h
 - [ ] crtdbg.h
@@ -1291,7 +1291,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib.h
 - [ ] gspawn-win32.c
 
-## gspawn-win32.c
+### gspawn-win32.c
 
 - [ ] config.h
 - [ ] direct.h
@@ -1311,7 +1311,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] wchar.h
 - [ ] windows.h
 
-## gspawn.c
+### gspawn.c
 
 - [ ] config.h
 - [ ] crt_externs.h
@@ -1343,11 +1343,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/wait.h
 - [ ] unistd.h
 
-## gspawn.h
+### gspawn.h
 
 - [ ] glib/gerror.h
 
-## gstdio.c
+### gstdio.c
 
 - [ ] config.h
 - [ ] direct.h
@@ -1368,12 +1368,12 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] wchar.h
 - [ ] windows.h
 
-## gstdio.h
+### gstdio.h
 
 - [ ] glib/gprintf.h
 - [ ] sys/stat.h
 
-## gstrfuncs.c
+### gstrfuncs.c
 
 - [ ] config.h
 - [ ] ctype.h
@@ -1391,14 +1391,14 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] windows.h
 - [ ] xlocale.h
 
-## gstrfuncs.h
+### gstrfuncs.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gmacros.h
 - [ ] glib/gtypes.h
 - [ ] stdarg.h
 
-## gstring.c
+### gstring.c
 
 - [ ] config.h
 - [ ] ctype.h
@@ -1409,14 +1409,14 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gstring.h
+### gstring.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gtypes.h
 - [ ] glib/gunicode.h
 - [ ] glib/gutils.h
 
-## gstringchunk.c
+### gstringchunk.c
 
 - [ ] config.h
 - [ ] ghash.h
@@ -1426,11 +1426,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gutils.h
 - [ ] string.h
 
-## gstringchunk.h
+### gstringchunk.h
 
 - [ ] glib/gtypes.h
 
-## gtester.c
+### gtester.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1444,10 +1444,8 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/wait.h
 - [ ] unistd.h
 
-## gtestutils.c
+### gtestutils.c
 
-- [ ] *
-- [ ] *
 - [ ] config.h
 - [ ] errno.h
 - [ ] fcntl.h
@@ -1476,7 +1474,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gtestutils.h
+### gtestutils.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gmessages.h
@@ -1484,7 +1482,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib/gstring.h
 - [ ] string.h
 
-## gthread-posix.c
+### gthread-posix.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1507,7 +1505,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gthread-win32.c
+### gthread-win32.c
 
 - [ ] config.h
 - [ ] glib-init.h
@@ -1520,7 +1518,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] windows.h
 
-## gthread.c
+### gthread.c
 
 - [ ] config.h
 - [ ] glib_trace.h
@@ -1535,13 +1533,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gthread.h
+### gthread.h
 
 - [ ] glib/gatomic.h
 - [ ] glib/gerror.h
 - [ ] glib/gutils.h
 
-## gthreadpool.c
+### gthreadpool.c
 
 - [ ] config.h
 - [ ] gasyncqueue.h
@@ -1552,15 +1550,15 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtimer.h
 - [ ] gutils.h
 
-## gthreadpool.h
+### gthreadpool.h
 
 - [ ] glib/gthread.h
 
-## gthreadprivate.h
+### gthreadprivate.h
 
 - [ ] deprecated/gthread.h
 
-## gtimer.c
+### gtimer.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1576,11 +1574,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] unistd.h
 - [ ] windows.h
 
-## gtimer.h
+### gtimer.h
 
 - [ ] glib/gtypes.h
 
-## gtimezone.c
+### gtimezone.c
 
 - [ ] config.h
 - [ ] gbytes.h
@@ -1600,11 +1598,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] wchar.h
 - [ ] windows.h
 
-## gtimezone.h
+### gtimezone.h
 
 - [ ] glib/gtypes.h
 
-## gtranslit.c
+### gtranslit.c
 
 - [ ] config.h
 - [ ] glib.h
@@ -1614,16 +1612,16 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gtrashstack.c
+### gtrashstack.c
 
 - [ ] config.h
 - [ ] gtrashstack.h
 
-## gtrashstack.h
+### gtrashstack.h
 
 - [ ] glib/gutils.h
 
-## gtree.c
+### gtree.c
 
 - [ ] config.h
 - [ ] gatomic.h
@@ -1631,38 +1629,38 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gtestutils.h
 - [ ] gtree.h
 
-## gtree.h
+### gtree.h
 
 - [ ] glib/gnode.h
 
-## gtypes.h
+### gtypes.h
 
 - [ ] glib/gmacros.h
 - [ ] glib/gversionmacros.h
 - [ ] glibconfig.h
 - [ ] time.h
 
-## gunibreak.c
+### gunibreak.c
 
 - [ ] config.h
 - [ ] gunibreak.h
 - [ ] stdlib.h
 
-## gunibreak.h
+### gunibreak.h
 
 - [ ] glib/gtypes.h
 - [ ] glib/gunicode.h
 
-## gunicode.h
+### gunicode.h
 
 - [ ] glib/gerror.h
 - [ ] glib/gtypes.h
 
-## gunicodeprivate.h
+### gunicodeprivate.h
 
 - [ ] gtypes.h
 
-## gunicollate.c
+### gunicollate.c
 
 - [ ] CoreServices/CoreServices.h
 - [ ] config.h
@@ -1678,7 +1676,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] wchar.h
 
-## gunidecomp.c
+### gunidecomp.c
 
 - [ ] config.h
 - [ ] gmem.h
@@ -1688,7 +1686,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gunidecomp.h
 - [ ] stdlib.h
 
-## guniprop.c
+### guniprop.c
 
 - [ ] config.h
 - [ ] gmem.h
@@ -1706,7 +1704,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gurifuncs.c
+### gurifuncs.c
 
 - [ ] config.h
 - [ ] config.h
@@ -1717,11 +1715,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gurifuncs.h
 - [ ] string.h
 
-## gurifuncs.h
+### gurifuncs.h
 
 - [ ] glib/gtypes.h
 
-## gutf8.c
+### gutf8.c
 
 - [ ] config.h
 - [ ] gconvert.h
@@ -1737,7 +1735,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] string.h
 - [ ] windows.h
 
-## gutils.c
+### gutils.c
 
 - [ ] config.h
 - [ ] crt_externs.h
@@ -1774,16 +1772,16 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/types.h
 - [ ] unistd.h
 
-## gutils.h
+### gutils.h
 
 - [ ] glib/gtypes.h
 - [ ] stdarg.h
 
-## gutilsprivate.h
+### gutilsprivate.h
 
 - [ ] gtypes.h
 
-## guuid.c
+### guuid.c
 
 - [ ] config.h
 - [ ] gchecksum.h
@@ -1794,16 +1792,16 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] guuid.h
 - [ ] string.h
 
-## guuid.h
+### guuid.h
 
 - [ ] glib/gtypes.h
 
-## gvalgrind.h
+### gvalgrind.h
 
 - [ ] stdint.h
 - [ ] valgrind.h
 
-## gvariant-core.c
+### gvariant-core.c
 
 - [ ] config.h
 - [ ] glib/gatomic.h
@@ -1818,20 +1816,20 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib/gvariant-serialiser.h
 - [ ] string.h
 
-## gvariant-core.h
+### gvariant-core.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gvariant.h
 - [ ] glib/gvarianttypeinfo.h
 
-## gvariant-internal.h
+### gvariant-internal.h
 
 - [ ] glib/gtypes.h
 - [ ] glib/gvarianttype.h
 - [ ] gvariant-serialiser.h
 - [ ] gvarianttypeinfo.h
 
-## gvariant-parser.c
+### gvariant-parser.c
 
 - [ ] config.h
 - [ ] errno.h
@@ -1848,7 +1846,7 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 
-## gvariant-serialiser.c
+### gvariant-serialiser.c
 
 - [ ] config.h
 - [ ] glib/gstrfuncs.h
@@ -1858,11 +1856,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gvariant-serialiser.h
 - [ ] string.h
 
-## gvariant-serialiser.h
+### gvariant-serialiser.h
 
 - [ ] gvarianttypeinfo.h
 
-## gvariant.c
+### gvariant.c
 
 - [ ] config.h
 - [ ] glib/ghash.h
@@ -1875,13 +1873,13 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gvariant-internal.h
 - [ ] string.h
 
-## gvariant.h
+### gvariant.h
 
 - [ ] glib/gbytes.h
 - [ ] glib/gstring.h
 - [ ] glib/gvarianttype.h
 
-## gvarianttype.c
+### gvarianttype.c
 
 - [ ] config.h
 - [ ] glib/gstrfuncs.h
@@ -1890,11 +1888,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] gvarianttype.h
 - [ ] string.h
 
-## gvarianttype.h
+### gvarianttype.h
 
 - [ ] glib/gtypes.h
 
-## gvarianttypeinfo.c
+### gvarianttypeinfo.c
 
 - [ ] config.h
 - [ ] glib/ghash.h
@@ -1904,20 +1902,20 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] glib/gthread.h
 - [ ] gvarianttypeinfo.h
 
-## gvarianttypeinfo.h
+### gvarianttypeinfo.h
 
 - [ ] glib/gvarianttype.h
 
-## gversion.c
+### gversion.c
 
 - [ ] config.h
 - [ ] gversion.h
 
-## gversion.h
+### gversion.h
 
 - [ ] glib/gtypes.h
 
-## gwakeup.c
+### gwakeup.c
 
 - [ ] config.h
 - [ ] fcntl.h
@@ -1932,11 +1930,11 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] sys/eventfd.h
 - [ ] windows.h
 
-## gwakeup.h
+### gwakeup.h
 
 - [ ] glib/gpoll.h
 
-## gwin32.c
+### gwin32.c
 
 - [ ] config.h
 - [ ] ctype.h
@@ -1959,15 +1957,15 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] windows.h
 - [ ] winternl.h
 
-## gwin32.h
+### gwin32.h
 
 - [ ] glib/gtypes.h
 
-## valgrind.h
+### valgrind.h
 
 - [ ] stdarg.h
 
-## win_iconv.c
+### win_iconv.c
 
 - [ ] errno.h
 - [ ] fcntl.h
@@ -1976,4 +1974,3 @@ can be converted into Golang and work on Linux and maybe Windows.
 - [ ] stdlib.h
 - [ ] string.h
 - [ ] windows.h
-
