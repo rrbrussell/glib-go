@@ -33,6 +33,155 @@ const (
 	GVariantClassDictEntry           = '{'
 )
 
+// GVariantUnref is not implemented.
+func GVariantUnref(value *GVariant) {
+}
+
+//GVariantRef is not implemented.
+func GVariantRef(value *GVariant) *GVariant {
+	return nil
+}
+
+//GVariantRefSink is not implemented.
+func GVariantRefSink(value *GVariant) *GVariant {
+	return nil
+}
+
+//GVariantIsFloating is not implemented.
+func GVariantIsFloating(value *GVariant) bool {
+	return false
+}
+
+//GVariantTakeRef is not implemented.
+func GVariantTakeRef(value *GVariant) *GVariant {
+	return nil
+}
+
+//GVariantGetType is not implemented.
+func GVariantGetType(value *GVariant) *GVariantType {
+	return nil
+}
+
+//GVariantGetTypeString is not implemented.
+func GVariantGetTypeString(value *GVariant) string {
+	return ""
+}
+
+//GVariantIsOfType is not implemented.
+func GVariantIsOfType(value *GVariant, typ *GVariantType) bool {
+	return false
+}
+
+// GVariantIsContainer is not implemented.
+func GVariantIsContainer(value *GVariant) bool {
+	return false
+}
+
+// GVariantClassify is not implemented.
+func GVariantClassify(value *GVariant) GVariantClass {
+	return 0
+}
+
+// GVariantClassify is not implemented.
+func GVariantNewBoolean(value bool) *GVariant {
+	return nil
+}
+
+// GVariantNewByte is not implemented.
+func GVariantNewByte(value uint8) *GVariant {
+	return nil
+}
+
+// GVariantNewInt16 is not implemented.
+func GVariantNewInt16(value int16) *GVariant {
+	return nil
+}
+
+// GVariantNewUInt16 is not implemented.
+func GVariantNewUInt16(value uint16) *GVariant {
+	return nil
+}
+
+// GVariantNewInt32 is not implemented.
+func GVariantNewInt32(value int32) *GVariant {
+	return nil
+}
+
+// GVariantNewUInt32 is not implemented.
+func GVariantNewUInt32(value uint32) *GVariant {
+	return nil
+}
+
+// GVariantNewInt64 is not implemented.
+func GVariantNewInt64(value int64) *GVariant {
+	return nil
+}
+
+// GVariantNewUInt64 is not implemented.
+func GVariantNewUInt64(value uint64) *GVariant {
+	return nil
+}
+
+// GVariantNewHandle is not implemented.
+func GVariantNewHandle(value uint64) *GVariant {
+	return nil
+}
+
+// GVariantNewDouble is not implemented.
+func GVariantNewDouble(value float32) *GVariant {
+	return nil
+}
+
+// GVariantNewString is not implemented.
+func GVariantNewString(value string) *GVariant {
+	return nil
+}
+
+// GVariantNewTakeString is not implemented. I don't expect to ever implement this.
+func GVariantNewTakeString(value string) *GVariant {
+	return nil
+}
+
+// GVariantNewPrintf is not implemented. I don't expect to ever implement this.
+func GVariantNewPrintf(format string, args ...interface{}) *GVariant {
+	return nil
+}
+
+// GVariantNewObjectPath is not implemented.
+func GVariantNewObjectPath(objectPath string) *GVariant {
+	return nil
+}
+
+// GVariantIsObjectPath is not implemented.
+func GVariantIsObjectPath(str string) bool {
+	return false
+}
+
+// GVariantNewSignature is not implemented.
+func GVariantNewSignature(signature string) *GVariant {
+	return nil
+}
+
+// GVariantIsSignature is not implemented.
+func GVariantIsSignature(str string) bool {
+	return false
+}
+
+// GVariantNewVariant is not implemented.
+func GVariantNewVariant(value *GVariant) *GVariant {
+	return nil
+}
+
+// GVariantNewStrv is not implemented.
+func GVariantNewStrV(strv []string) *GVariant {
+	return nil
+}
+
+// GVariantNewObjv is not implemented.
+func GVariantNewObjv(objv []string) *GVariant {
+	return nil
+}
+
 // GVariantIter - transpiled function from  /home/robert/Documents/src/glib-2.62.4/glib/gvariant.h:268
 type GVariantIter struct {
 	x [16]uint
